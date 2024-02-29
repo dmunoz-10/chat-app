@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  database:
+    image: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USERNAME: postgres
+      POSTGRES_PASSWORD: password
+
+  development:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - database
