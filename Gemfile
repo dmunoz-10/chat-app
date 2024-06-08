@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.3.0"
 
@@ -31,6 +32,8 @@ gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
 gem "redis", ">= 4.0.1"
+
+gem "devise"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"

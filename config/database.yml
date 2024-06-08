@@ -17,9 +17,10 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-  host: database
-  username: postgres
-  password: password
+  # Uncomment for Docker
+  # host: database
+  # username: postgres
+  # password: password
   pool: 5
 
 development:
