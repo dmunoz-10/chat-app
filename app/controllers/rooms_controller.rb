@@ -20,9 +20,9 @@ class RoomsController < ApplicationController
 
     respond_to do |format|
       if @room.save
+        current_user.rooms << @room
         format.turbo_stream do
-          current_user.rooms << @room
-          render turbo_stream: turbo_stream.append('rooms', partial: 'shared/room', locals: { room: @room })
+          render turbo_stream: turbo_stream.append("user_#{current_user.id}rooms", partial: 'shared/room', locals: { room: @room })
         end
       else
         format.turbo_stream do
