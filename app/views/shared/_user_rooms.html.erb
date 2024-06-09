@@ -8,7 +8,7 @@
   <h3 class="text-white font-bold text-xl mt-3 text-center mb-2">My rooms</h3>
 
   <div class="flex flex-col px-5 gap-2 w-full" id="rooms">
-    <% Room.all.order(:created_at).each do |room| %>
+    <% current_user.rooms.all.order(:created_at).each do |room| %>
       <%= render "shared/room", { room: room } %>
     <% end %>
   </div>
